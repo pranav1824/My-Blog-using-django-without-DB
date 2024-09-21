@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
+
+{% block title %}
+    Pranav's Blog
+{% endblock %}
+
+{% block content %}
+
+
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/pranav.jpeg"%}" alt="Pranav - The Author" />
+            <h2>Pranava's Blog</h2>
+        </header>
+        <p>
+            Doing computer science engineering, weaving code spells as a dual-wielding full-stack developer.
+        </p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>I am Programmer, Juggling studies and code, weaving digital dreams.
+        </p>
+        <p>
+            My goal is to be good developer.
+        </p>
+    </section>
+{% endblock %}
+
+
